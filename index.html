@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Chrome拡張機能の簡易テンプレートを生成するWebページです">
+
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header style="display: flex;">
+            <h1>Chrome Extension Template Generator  ​</h1>
+            <p style="font-size: small; margin-top: auto; margin-bottom: 25px;">by kyonshi</p>
+        </header>
+        <div id="content">
+            <div id="editor">
+                <div class="item">
+                    <h3>Extension Name</h3>
+                    <input type="text" data-type="extension_name" placeholder="My Extension">
+                </div>
+                <div class="item">
+                    <h3>Version</h3>
+                    <input type="text" data-type="version" placeholder="1.0.0">
+                </div>
+                <div class="item" style="grid-column: 1 / 3;">
+                    <h3>Description</h3>
+                    <input type="text" data-type="description" style="width: 540px;" placeholder="This is an extension template.">
+                </div>
+                <div class="item"style="grid-column: 1 / 3;">
+                    <h3>Image for the icon<p style="font-size: small; margin-top: auto; margin-bottom: 25px;">※Square images are recommended.</p></h3>
+                    <div class="item" id="icon_editor">
+                        <button id="img_selector">Open File</button>
+                        <input id="image_input" style="display:none;">
+                        <div id="object-fit">
+                            <div class="object"><input id="fill" type="radio" name="object-fits" checked><label for="fill">fill</label></div>
+                            <div class="object"><input id="contain" type="radio" name="object-fits"><label for="contain">contain</label></div>
+                            <div class="object"><input id="cover" type="radio" name="object-fits"><label for="cover">cover</label></div>
+                        </div>
+                        <div id="preview">
+                            <img src="res/sample_icon.png" width="16" height="16" style="grid-area: small;">
+                            <img src="res/sample_icon.png" width="32" height="32" style="grid-area: medium;">
+                            <img src="res/sample_icon.png" width="48" height="48" style="grid-area: sbig;">
+                            <img src="res/sample_icon.png" width="128" height="128" style="grid-area: big;">
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div id="viewer">
+            </div>
+        </div>
+    </body>
+</html>
