@@ -1,2 +1,2 @@
 # ExtTemplate
-Chrome拡張機能の簡易テンプレートを生成するWebページ 
+Chrome拡張機能の簡易テンプレートを生成するWebページ
