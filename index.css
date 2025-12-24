@@ -51,7 +51,7 @@ header {
 }
 
 #icon_editor {
-    display: grid;
+    display:grid;
     grid-template-columns: 1fr 120px 200px;
 }
 
@@ -75,6 +75,16 @@ header {
     background-color: #2b2b2b;
 }
 
+#icon_enabled {
+    margin-top: 15px;
+    height: 15px;
+    width: 15px;
+}
+
+label[for="icon_enabled"] {
+    margin: 15px;
+}
+
 .object input[type="radio"] {
     width: 25px;
     height: 17px;
@@ -92,4 +102,40 @@ header {
 
 #preview img {
     margin-left: auto;
+}
+
+.checkbox {
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+}
+
+label {
+    margin:5px;
+    font-weight: bolder;
+    font-size: small;
+    margin-left: 3px;
+    height: 15px;
+    line-height: 15px;
+    user-select: none;
+}
+
+h3 {
+    margin:5px;
+}
+
+h4 {
+    margin: 0;
+}
+
+h5 {
+    margin: 0;
+    margin-top: 10px;
+}
+
+#permissions input.checkbox + label,
+#permissions input.checkbox {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
 }
