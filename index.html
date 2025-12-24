@@ -3,31 +3,40 @@
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Chrome拡張機能の簡易テンプレートを生成するWebページです">
-
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <header style="display: flex;">
-            <h1>Chrome Extension Template Generator  ​</h1>
+            <h1>Chrome Extension Template Generator</h1>
             <p style="font-size: small; margin-top: auto; margin-bottom: 25px;">by kyonshi</p>
         </header>
+
         <div id="content">
             <div id="editor">
+
                 <div class="item">
                     <h3>Extension Name</h3>
                     <input type="text" data-type="extension_name" placeholder="My Extension">
                 </div>
+
                 <div class="item">
                     <h3>Version</h3>
                     <input type="text" data-type="version" pattern="^([0-9]|[1-9][0-9]{0,4})(\.([0-9]|[1-9][0-9]{0,4})){0,3}$" placeholder="0.1.0">
                 </div>
+
                 <div class="item" style="grid-column: 1 / 3;">
                     <h3>Description</h3>
                     <input type="text" data-type="description" style="width: 540px;" placeholder="This is an extension template.">
                 </div>
+
                 <div class="item" style="grid-column: 1 / 3;">
-                    <h3>Image for the icon<p style="font-size: small; margin-top: auto; margin-bottom: 25px;">※Square images are recommended.</p></h3>
+                    <h3>
+                        Image for the icon
+                        <p style="font-size: small; margin-top: auto; margin-bottom: 25px;">※Square images are recommended.</p>
+                    </h3>
+
                     <input id="image_input" type="file" accept="image/*" style="opacity:0; position:absolute; left:-9999px;">
+
                     <div class="item" id="icon_editor">
                         <div>
                             <button id="img_selector" onclick="document.getElementById('image_input').click()">Open File</button><br>
@@ -36,11 +45,22 @@
                                 <label for="icon_enabled">Set icon</label>
                             </div>
                         </div>
+
                         <div id="object-fit">
-                            <div class="object"><input id="fill" type="radio" name="object-fits" checked><label for="fill">fill</label></div>
-                            <div class="object"><input id="contain" type="radio" name="object-fits"><label for="contain">contain</label></div>
-                            <div class="object"><input id="cover" type="radio" name="object-fits"><label for="cover">cover</label></div>
+                            <div class="object">
+                                <input id="fill" type="radio" name="object-fits" checked>
+                                <label for="fill">fill</label>
+                            </div>
+                            <div class="object">
+                                <input id="contain" type="radio" name="object-fits">
+                                <label for="contain">contain</label>
+                            </div>
+                            <div class="object">
+                                <input id="cover" type="radio" name="object-fits">
+                                <label for="cover">cover</label>
+                            </div>
                         </div>
+
                         <div id="preview">
                             <img src="res/sample_icon.png" width="16" height="16" style="grid-area: small;">
                             <img src="res/sample_icon.png" width="32" height="32" style="grid-area: medium;">
@@ -48,110 +68,110 @@
                             <img src="res/sample_icon.png" width="128" height="128" style="grid-area: big;">
                         </div>
                     </div>
-
                 </div>
+
                 <div class="item" style="grid-column: 1 / 3; width: 560px;">
-
                     <h4 style="margin:0;">Permissions</h4>
-                <div id="permissions" style="display: grid; grid-template-columns: 1fr 1fr; border: solid 1px #5e5d5d; background-color: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px;">
 
-<div class="perm-group" style="width: 250px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 15px 1fr;  grid-template-rows: repeat(5, 25px);">
-    <h5 style="grid-column: 1 / 3; margin-top: 5px;">General permissions</h5>
+                    <div id="permissions" style="display: grid; grid-template-columns: 1fr 1fr; border: solid 1px #5e5d5d; background-color: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px;">
 
-    <div>
-        <input type="checkbox" id="perm-storage" class="checkbox">
-        <label for="perm-storage">storage</label>
-    </div>
+                        <div class="perm-group" style="width: 250px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, 25px);">
+                            <h5 style="grid-column: 1 / 3; margin-top: 5px;">General permissions</h5>
 
-    <div>
-        <input type="checkbox" id="perm-tabs" class="checkbox">
-        <label for="perm-tabs">tabs</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-storage" class="checkbox">
+                                <label for="perm-storage">storage</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-activeTab" class="checkbox">
-        <label for="perm-activeTab">activeTab</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-tabs" class="checkbox">
+                                <label for="perm-tabs">tabs</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-scripting" class="checkbox">
-        <label for="perm-scripting">scripting</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-activeTab" class="checkbox">
+                                <label for="perm-activeTab">activeTab</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-alarms" class="checkbox">
-        <label for="perm-alarms">alarms</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-scripting" class="checkbox">
+                                <label for="perm-scripting">scripting</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-notifications" class="checkbox">
-        <label for="perm-notifications">notifications</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-alarms" class="checkbox">
+                                <label for="perm-alarms">alarms</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-contextMenus" class="checkbox">
-        <label for="perm-contextMenus">contextenus</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-notifications" class="checkbox">
+                                <label for="perm-notifications">notifications</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-mdns" class="checkbox">
-        <label for="perm-mdns">mdns</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-contextMenus" class="checkbox">
+                                <label for="perm-contextMenus">contextenus</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-tts" class="checkbox">
-        <label for="perm-tts">tts</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-mdns" class="checkbox">
+                                <label for="perm-mdns">mdns</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-webNavigation" class="checkbox">
-        <label for="perm-webNavigation">webNavigation</label>
-    </div>
-</div>
+                            <div>
+                                <input type="checkbox" id="perm-tts" class="checkbox">
+                                <label for="perm-tts">tts</label>
+                            </div>
 
-<div class="perm-group danger" style="width: 250px; display: grid; grid-template-columns: 1fr 1fr;  grid-template-rows: repeat(5, 25px);">
-    <h5 style="grid-column: 1 / 3; margin-top: 5px;">Powerful permissions</h5>
-    <div>
-        <input type="checkbox" id="perm-history" class="checkbox">
-        <label for="perm-history">history</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-webNavigation" class="checkbox">
+                                <label for="perm-webNavigation">webNavigation</label>
+                            </div>
+                        </div>
 
-    <div>
-        <input type="checkbox" id="perm-bookmarks" class="checkbox">
-        <label for="perm-bookmarks">bookmarks</label>
-    </div>
+                        <div class="perm-group danger" style="width: 250px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, 25px);">
+                            <h5 style="grid-column: 1 / 3; margin-top: 5px;">Powerful permissions</h5>
 
-    <div>
-        <input type="checkbox" id="perm-downloads" class="checkbox">
-        <label for="perm-downloads">downloads</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-history" class="checkbox">
+                                <label for="perm-history">history</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-cookies" class="checkbox">
-        <label for="perm-cookies">cookies</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-bookmarks" class="checkbox">
+                                <label for="perm-bookmarks">bookmarks</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-webRequest" class="checkbox">
-        <label for="perm-webRequest">webRequest</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-downloads" class="checkbox">
+                                <label for="perm-downloads">downloads</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-proxy" class="checkbox">
-        <label for="perm-proxy">proxy</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-cookies" class="checkbox">
+                                <label for="perm-cookies">cookies</label>
+                            </div>
 
-    <div>
-        <input type="checkbox" id="perm-debugger" class="checkbox">
-        <label for="perm-debugger">debugger</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-webRequest" class="checkbox">
+                                <label for="perm-webRequest">webRequest</label>
+                            </div>
 
-    <div style="grid-column: 1 / 3;">
-        <input type="checkbox" id="perm-declarativeNetRequest" class="checkbox">
-        <label for="perm-declarativeNetRequest">declarativeNetRequest</label>
-    </div>
+                            <div>
+                                <input type="checkbox" id="perm-proxy" class="checkbox">
+                                <label for="perm-proxy">proxy</label>
+                            </div>
 
-</div>
+                            <div>
+                                <input type="checkbox" id="perm-debugger" class="checkbox">
+                                <label for="perm-debugger">debugger</label>
+                            </div>
+
+                            <div style="grid-column: 1 / 3;">
+                                <input type="checkbox" id="perm-declarativeNetRequest" class="checkbox">
+                                <label for="perm-declarativeNetRequest">declarativeNetRequest</label>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -176,9 +196,10 @@
                         </div>
                     </div>
                 </div>
+
             </div>
-            <div id="viewer">
-            </div>
+
+            <div id="viewer"></div>
         </div>
     </body>
 </html>
