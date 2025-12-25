@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Chrome拡張機能の簡易テンプレートを生成するWebページです">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script type="module" src="js/index.js"></script>
     </head>
     <body>
         <header style="display: flex;">
@@ -62,10 +64,10 @@
                         </div>
 
                         <div id="preview">
-                            <img src="res/sample_icon.png" width="16" height="16" style="grid-area: small;">
-                            <img src="res/sample_icon.png" width="32" height="32" style="grid-area: medium;">
-                            <img src="res/sample_icon.png" width="48" height="48" style="grid-area: sbig;">
-                            <img src="res/sample_icon.png" width="128" height="128" style="grid-area: big;">
+                            <img src="res/sample_icon.png" data-size="16" width="16" height="16" style="grid-area: small;">
+                            <img src="res/sample_icon.png" data-size="32" width="32" height="32" style="grid-area: medium;">
+                            <img src="res/sample_icon.png" data-size="48" width="48" height="48" style="grid-area: sbig;">
+                            <img src="res/sample_icon.png" data-size="128" width="128" height="128" style="grid-area: big;">
                         </div>
                     </div>
                 </div>
@@ -177,10 +179,13 @@
                 </div>
 
                 <div class="item" style="width: 200px;">
-                    <div id="backgroundjs">
+                    <div id="file_options">
                         <h4>background</h4>
                         <input type="checkbox" id="background" class="checkbox" checked>
                         <label for="background">service-worker.js</label>
+                        <h4 style="margin-top: 5px;">Content Scripts</h4>
+                        <input type="checkbox" id="content-script" class="checkbox" checked>
+                        <label for="content-script">content-script.js</label>
                     </div>
                 </div>
 
@@ -192,14 +197,21 @@
 
                         <div>
                             <label for="host-custom">Custom URL:</label>
-                            <input type="text" id="host-custom" placeholder="https://example.com/*">
+                            <input type="text" id="host-custom" placeholder="https://example.com/*,https://kyonshi.com/*">
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <div id="viewer"></div>
+            <div id="viewer">
+                <h2>preview</h2>
+                <h4 style="margin-top: 10px;">Manifest.json</h4>
+                <pre class="code-block" id="manifest_preview"><code>
+                </code></pre>
+                <button id="generate">Generate Template</button>
+            </div>
         </div>
     </body>
+    <script type="module" src="js/setup.js"></script>
 </html>
