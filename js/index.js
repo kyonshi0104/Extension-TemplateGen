@@ -93,7 +93,7 @@ async function IconsGen() {
     const imageBitmap = await createImageBitmap(imageFile);
 
     // target icon sizes
-    const sizes = [16, 48, 128];
+    const sizes = [16, 32, 48, 128];
     const icons = {};
 
     for (const size of sizes) {
